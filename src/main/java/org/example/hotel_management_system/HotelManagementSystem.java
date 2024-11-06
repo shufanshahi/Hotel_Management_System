@@ -2,9 +2,10 @@ package org.example.hotel_management_system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 
-public class HotelManagementSystem extends JFrame {
+public class HotelManagementSystem extends JFrame implements ActionListener {
 
 
     HotelManagementSystem(){
@@ -28,6 +29,7 @@ public class HotelManagementSystem extends JFrame {
         next.setBounds(1150, 450,150,50);
         next.setBackground(Color.WHITE);
         next.setForeground(Color.MAGENTA);
+        next.addActionListener(this);
         next.setFont(new Font("serif", Font.PLAIN, 24));
         image.add(next);
 
@@ -36,6 +38,11 @@ public class HotelManagementSystem extends JFrame {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        setVisible(false);
+        new Login();
+    }
     public static void main(String[] args){
         new HotelManagementSystem();
     }
