@@ -51,6 +51,7 @@ public class DashBoard extends JFrame implements ActionListener {
         admin.add(addrooms);
 
         JMenuItem adddrivers = new JMenuItem(("ADD DRIVERS"));
+        adddrivers.addActionListener(this);
         admin.add(adddrivers);
 
         setVisible(true);
@@ -64,6 +65,13 @@ public class DashBoard extends JFrame implements ActionListener {
         else if(ae.getActionCommand().equals("ADD ROOMS")){
             new AddRoom();
 
+        }
+        else if(ae.getActionCommand().equals("ADD DRIVERS")){
+            new AddDriver();
+
+        }
+        else if(ae.getActionCommand().equals("RECEPTION")){
+            new Reception();
         }
     }
 
